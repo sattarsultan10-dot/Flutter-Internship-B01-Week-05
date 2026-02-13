@@ -26,7 +26,7 @@ class _NotesListPageState extends State<NotesListPage> {
     return Scaffold(
       appBar: AppBar(title: const Text("Notes App")),
 
-      // 🔍 SEARCH FIELD
+    
       body: Column(
         children: [
           Padding(
@@ -42,7 +42,7 @@ class _NotesListPageState extends State<NotesListPage> {
             ),
           ),
 
-          // 📋 NOTES LIST
+          
           Expanded(
             child: ListView.builder(
               itemCount: filteredNotes.length,
@@ -52,7 +52,7 @@ class _NotesListPageState extends State<NotesListPage> {
                 return Dismissible(
                   key: UniqueKey(),
 
-                  // 👉 Swipe Delete
+                 
                   background: Container(color: Colors.red),
 
                   onDismissed: (_) {
@@ -63,7 +63,7 @@ class _NotesListPageState extends State<NotesListPage> {
                     title: Text(note.title),
                     subtitle: Text(note.description),
 
-                    // 👉 Edit
+          
                     onTap: () => showNoteDialog(context, provider, index, note),
                   ),
                 );
@@ -73,7 +73,7 @@ class _NotesListPageState extends State<NotesListPage> {
         ],
       ),
 
-      // ➕ ADD BUTTON
+
       floatingActionButton: FloatingActionButton(
         onPressed: () => showNoteDialog(context, provider, null, null),
         child: const Icon(Icons.add),
@@ -81,7 +81,7 @@ class _NotesListPageState extends State<NotesListPage> {
     );
   }
 
-  // ADD + EDIT DIALOG
+
   void showNoteDialog(
     BuildContext context,
     NotesProvider provider,
