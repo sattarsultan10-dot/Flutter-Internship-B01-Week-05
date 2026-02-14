@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:week_05/task-02/providers/auth_providers.dart';
+import 'package:week_05/task-03/provider/auth_providers.dart';
 import 'login_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -8,7 +8,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final auth = Provider.of<AuthProvider>(context);
+    final auth = context.read<AuthProviders>();
 
     return Scaffold(
       appBar: AppBar(

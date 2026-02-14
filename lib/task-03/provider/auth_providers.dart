@@ -8,7 +8,6 @@ class AuthProviders extends ChangeNotifier {
   bool get isloading => _isloading;
   bool get islogin => _islogin;
 
-  get currentUser => null;
   void setEmail(String value) {
     email = value;
   }
@@ -43,7 +42,7 @@ class AuthProviders extends ChangeNotifier {
   Future<void> login() async {
     _isloading = true;
     notifyListeners();
-    await Future.delayed(Duration(seconds: 10));
+    await Future.delayed(Duration(seconds: 2));
     _isloading = false;
     _islogin = true;
     notifyListeners();
