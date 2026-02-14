@@ -8,7 +8,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final auth = context.read<AuthProviders>();
+    final auth = Provider.of<AuthProviders>(context, listen: false);
 
     return Scaffold(
       appBar: AppBar(
